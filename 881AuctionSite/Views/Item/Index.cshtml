@@ -1,0 +1,186 @@
+﻿@model IEnumerable<DemoAuctrack.Models.Item>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    .form-control {
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #eee;
+        background-image: none;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+
+        .form-control:focus {
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        }
+
+        .form-control::-moz-placeholder {
+            color: #999;
+            opacity: 1;
+        }
+
+        .form-control:-ms-input-placeholder {
+            color: #999;
+        }
+
+        .form-control::-webkit-input-placeholder {
+            color: #999;
+        }
+
+        .form-control::-ms-expand {
+            background-color: transparent;
+            border: 0;
+        }
+
+        .form-control[disabled],
+        .form-control[readonly],
+        fieldset[disabled] .form-control {
+            background-color: #eee;
+            opacity: 1;
+        }
+
+        .form-control[disabled],
+        fieldset[disabled] .form-control {
+            cursor: not-allowed;
+        }
+
+    textarea.form-control {
+        height: auto;
+    }
+    .buttontext{
+        color: black;
+    }
+    .button {
+        color: white;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        padding: 7px 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+    }
+    .button2:hover {
+        box-shadow: 0 12px 16px 0 rgba(118,40,186,0.24),0 17px 50px 0 rgba(118,40,186,0.19);
+    }
+</style>
+
+<br />
+<h1 style="font-size:60px;text-align:center">The WSDP Auction Items</h1>
+<br />
+
+@if (Request.IsAuthenticated)
+{
+    <h3 style="text-align:center">WSDP Staff Options</h3>
+    <div style="text-align:center">
+        <button class="button button2" style="margin-left:2px;display:inline-block;color:black;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px">@Html.ActionLink("Create New", "Create", new { controller = "Item" }, new { @style = "color:#ffffff" })</button>
+        <button class="button button2" style="margin-left:2px;display:inline-block;color:black;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px">@Html.ActionLink("View Bidders", "Index", new { controller = "Bidder" }, new { @style = "color:#ffffff" })</button>
+
+    </div>
+    <br />
+    <br />
+    }
+    @using (Html.BeginForm())
+    {
+        <div style="text-align:center">
+            <p style="color:black;display:inline-block;padding-right:5px;font-size:16px">Find by Item Name:</p> <p style="color:#4f0f87;display:inline-block;padding-right:5px">@Html.Editor("SearchString", ViewBag.CurrentFilter as string)</p>
+            <button class="button button2" style="color:white;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px">Search</button>
+            <button class="button button2" style="margin-left:2px;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px">@Html.ActionLink("Clear", "Index", new { controller = "Item" }, new { @style = "color:#ffffff" })</button>
+        </div>
+        <br />
+    }
+    <table class="table">
+        <tr>
+            <th>
+                Item #
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Value
+            </th>
+            <th>
+                Top Bid
+            </th>
+            <th>
+                Bidder #
+            </th>
+            <th>
+                Item Donated By
+            </th>
+            <th>
+                Item Timeframe
+            </th>
+            <th>
+                Options
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Current)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Winner)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Donator)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeFrame)
+                </td>
+                @if (Request.IsAuthenticated)
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ItemID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ItemID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ItemID })
+                    </td>
+                }
+                @if (!Request.IsAuthenticated)
+                {
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.ItemID })
+                    </td>
+                }
+            </tr>
+        }
+
+    </table>

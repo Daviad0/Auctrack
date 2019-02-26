@@ -1,0 +1,153 @@
+﻿@model DemoAuctrack.Models.Item
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <h4>Item</h4>
+
+
+    <table class="table table-condensed">
+        <tr>
+            <th>
+                <p>Name of Column</p>
+            </th>
+            <th>
+                <p>Textbox Editor</p>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Item ID (CANNOT BE CHANGED):
+            </th>
+            <th>
+                <div class="form-group">
+
+                    <div class="col-md-10" style="display:inline-block">
+                        @Html.EditorFor(model => model.ItemID, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ItemID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Name of Item:
+            </th>
+            <th>
+                <div class="form-group">
+
+                    <div class="col-md-10" style="display:inline-block">
+                        @Html.EditorFor(model => model.ItemName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ItemName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Description:
+            </th>
+            <th>
+                <div class="form-group">
+
+                    <div class="col-md-10" style="display:inline-block">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Value of Item in USD ($DD.CC):
+            </th>
+            <th>
+                <div class="form-group">
+
+                    <div class="col-md-10" style="display:inline-block">
+                        @Html.EditorFor(model => model.Value, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Value, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Current Bid in USD ($DD.CC):
+            </th>
+            <th>
+                <div class="form-group">
+
+                    <div class="col-md-10" style="display:inline-block">
+                        @Html.EditorFor(model => model.Current, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Current, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Bidder Number of Current Winner:
+            </th>
+            <th>
+                <div class="form-group">
+
+                    <div class="col-md-10" style="display:inline-block">
+                        @Html.EditorFor(model => model.Winner, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Winner, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Company/People who Donated Item/Items:
+            </th>
+            <th>
+                <div class="form-group">
+
+                    <div class="col-md-10" style="display:inline-block">
+                        @Html.EditorFor(model => model.Donator, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Donator, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Timeframe Item is Available (HH:MM):
+            </th>
+            <th>
+                <div class="form-group">
+
+                    <div class="col-md-10" style="display:inline-block">
+                        @Html.EditorFor(model => model.TimeFrame, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TimeFrame, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </th>
+        </tr>
+
+    </table>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

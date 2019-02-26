@@ -1,0 +1,53 @@
+﻿@model DemoAuctrack.Models.Item
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="text-align:center">Item Details</h2>
+
+<div>
+    <hr />
+    <div style="text-align:center">
+        <h3>You are bidding for...</h3>
+        <div style="width:100%;border:2px solid #ccc;background-color:#eee">
+            <h4>@Html.DisplayFor(model => model.ItemName)</h4>
+            <h4>@Html.DisplayFor(model => model.ItemID)</h4>
+            <p>@Html.DisplayFor(model => model.Description)</p>
+        </div>
+        <h3>This item is part of the timeframe of...</h3>
+        <div style="width:100%;border:2px solid #ccc;background-color:#eee">
+            <h4>@Html.DisplayFor(model => model.TimeFrame)</h4>
+        </div>
+        <h3>Generously donated by</h3>
+        <div style="width:100%;border:2px solid #ccc;background-color:#eee">
+            <h4>@Html.DisplayFor(model => model.Donator)</h4>
+        </div>
+        <h3>Which is worth about...</h3>
+        <div style="width:100%;border:2px solid #ccc;background-color:#eee">
+            <h4>$@Html.DisplayFor(model => model.Value)</h4>
+        </div>
+        <h3>Currently, the bid is at...</h3>
+        <div style="width:100%;border:2px solid #ccc;background-color:#eee">
+            <h4>$@Html.DisplayFor(model => model.Current)</h4>
+        </div>
+        <h3>The bidder that holds the highest bid is...</h3>
+        <div style="width:100%;border:2px solid #ccc;background-color:#eee">
+            <h4>Bidder @Html.DisplayFor(model => model.Winner)</h4>
+        </div>
+    </div>
+</div>
+<p>
+    @if (Request.IsAuthenticated) {
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ItemID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+     }
+     @if (!Request.IsAuthenticated)
+     {
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+     }
+</p>

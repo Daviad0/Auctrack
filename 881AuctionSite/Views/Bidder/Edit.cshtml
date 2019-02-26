@@ -1,0 +1,81 @@
+﻿@model DemoAuctrack.Models.Bidder
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    @Html.HiddenFor(model => model.BidderNum)
+    <h4>Bidder</h4>
+    <hr />
+    <table class="table table-condensed">
+        <tr>
+            <th>
+                <p>Name of Column</p>
+            </th>
+            <th>
+                <p>Textbox Editor</p>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Bidder Number:
+            </th>
+            <th>
+                <div class="form-group">
+
+                    <div class="col-md-10" style="display:inline-block">
+                        <input class="form-control" disabled placeholder="@Model.BidderNum" />
+                    </div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Name of Bidder:
+            </th>
+            <th>
+                <div class="form-group">
+
+                    <div class="col-md-10" style="display:inline-block">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Bidder Contact Info:
+            </th>
+            <th>
+                <div class="form-group">
+
+                    <div class="col-md-10" style="display:inline-block">
+                        @Html.EditorFor(model => model.ContactInfo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ContactInfo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </th>
+        </tr>
+
+
+
+    </table>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

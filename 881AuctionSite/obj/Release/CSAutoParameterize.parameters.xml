@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="AuctionContext-Web.config Connection String" description="AuctionContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=DESKTOP-ULHGTN5\SQLEXPRESS;Initial Catalog=AuctionContext;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\djree\\source\\repos\\881AuctionSite\\881AuctionSite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AuctionContext']/@connectionString" />
+  </parameter>
+  <parameter name="ApplicationDbContext-Web.config Connection String" description="ApplicationDbContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=DESKTOP-ULHGTN5\SQLEXPRESS;Initial Catalog=DefaultConnection;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\djree\\source\\repos\\881AuctionSite\\881AuctionSite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ApplicationDbContext']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="DefaultConnection_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\djree\\source\\repos\\881AuctionSite\\881AuctionSite\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>
