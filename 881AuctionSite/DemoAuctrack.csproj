@@ -191,6 +191,10 @@
     <Compile Include="Migrations\201902231831452_Bidder.Designer.cs">
       <DependentUpon>201902231831452_Bidder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902262208212_MainKey.cs" />
+    <Compile Include="Migrations\201902262208212_MainKey.Designer.cs">
+      <DependentUpon>201902262208212_MainKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -296,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902231831452_Bidder.resx">
       <DependentUpon>201902231831452_Bidder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902262208212_MainKey.resx">
+      <DependentUpon>201902262208212_MainKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

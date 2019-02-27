@@ -234,7 +234,7 @@ namespace DemoAuctrack.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ItemName,Description,Value,Current,Winner,Donator,TimeFrame")] Item item)
+        public ActionResult Edit([Bind(Include = "ItemID,ItemName,Description,Value,Current,Winner,Donator,TimeFrame")] Item item)
         {
             if (ModelState.IsValid)
             {

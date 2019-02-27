@@ -1,6 +1,19 @@
 ﻿@{
     ViewBag.Title = "About";
 }
+<style>
+    .text {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .info {
+        background-color: #eee;
+        color: #4f0f87;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+</style>
 <br />
 <br />
 <h1 style="font-size:5vw;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align:center;color:black">Auctrack</h1>
@@ -9,6 +22,20 @@
     <a href="@Url.Action("Index", "Item")" target="_" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:1vw;border-radius:12px;width:30vw;display:inline" value="Connect to WSDP" /></a>
     <a href="http://881thepark.com" target="_" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:1vw;border-radius:12px;width:30vw;display:inline" value="Visit WSDP's Website" /></a>
 </div>
-<h3>@ViewBag.Message</h3>
-
-<p>Use this area to provide additional information.</p>
+<br />
+<br />
+<div class="info">
+    <h2 class="text">What is the WSDP Auction? <i class="material-icons">gavel</i></h2>
+    <p style="padding-left:5px;padding-right:5px;padding-bottom:10px">The WSDP Auction is an auction for WSDP Radio. In the past years, it has raised over $10,000 for the radio station. It is run by the amazing student staff team and station manager, Bill Keith. All day on [AUCTION DAY], students and volunteers gather at 88.1 The Park to manage the auction.</p>
+</div>
+<br />
+<div class="info">
+    <h2 class="text">What is Auctrack? <i class="material-icons">gavel</i></h2>
+    <p style="padding-left:5px;padding-right:5px;padding-bottom:10px">Auctrack is a website made for the purpose of helping listeners see the current bid as well as having it announced on the radio. As a listener, it may get tough not knowing the current bid of an item so this website was created to make it easier for the listeners and the volunteers at the station bringing them a fast and reliable database editing system.</p>
+</div>
+<br />
+<div class="info">
+    <h2 class="text">How can I Bid? <i class="material-icons">gavel</i></h2>
+    <p style="padding-left:5px;padding-right:5px;padding-bottom:10px">You can currently bid by calling the bidding number on the @Html.ActionLink("CONNECT PAGE", "Connect") and then going to the "Contact WSDP for a bid" section.</p>
+</div>
+<br />
