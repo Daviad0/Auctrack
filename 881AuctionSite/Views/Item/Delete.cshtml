@@ -73,10 +73,10 @@
     {
         @Html.AntiForgeryToken()
 
-        <div style="text-align:center">
-            <input type="submit" value="Delete" class="button buttondanger" style="margin-left:2px;display:inline-block;color:white;display:inline-block;background-color:#ff4444;font-size:20px;border-radius:12px" />
-            <button class="button button2" style="margin-left:2px;display:inline-block;color:black;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px">@Html.ActionLink("View Items", "Index", new { controller = "Item" }, new { @style = "color:#ffffff" })</button>
+    <div style="text-align:center">
 
-        </div>
+        <a href="@Url.Action("Index", "Item")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="Cancel" /></a>
+        <input type="submit" value="Delete" class="button buttondanger" style="margin-left:2px;display:inline-block;color:white;display:inline-block;background-color:#ff4444;font-size:20px;border-radius:12px" />
+    </div>
     }
 </div>

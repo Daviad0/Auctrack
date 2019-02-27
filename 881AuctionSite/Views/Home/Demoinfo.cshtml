@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "DEMOINFO";
+}
+<style>
+    .text {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .info {
+        background-color: #eee;
+        color: #4f0f87;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+</style>
+<br />
+<br />
+<h1 style="font-size:5vw;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align:center;color:black">DEMOINFO</h1>
+<h3 style="font-size:3vw;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-align:center;color:black">Page for Auctrack Demo Information</h3>
+<div style="text-align:center">
+    <a href="@Url.Action("Index", "Home")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:1vw;border-radius:12px;width:30vw;display:inline" value="Explore Auctrack" /></a>
+    <a href="@Url.Action("Index", "Item")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:1vw;border-radius:12px;width:30vw;display:inline" value="Visit the Item Page" /></a>
+</div>
+<h5 style="text-align:center">As this is a demo website, we invite you to mess around with the website and items with the user accounts we have provided! Thank you for taking a look at Auctrack!</h5>
+<br />
+<br />
+<div class="info">
+    <h2 class="text">Auctrack's Demo Goal:</h2>
+    <p style="padding-left:5px;padding-right:5px;padding-bottom:10px">The goal of this demo for Auctrack is to spark interest in the idea and get feedback to work off of! Auctrack is an ASP.NET MVC Application created from the default ASP.NET Application. It has been greatly modified to fit the needs and design of WSDP Radio's Auction.</p>
+</div>
+<br />
+<div class="info">
+    <h2 class="text">Auctrack's Hosting Plan:</h2>
+    <p style="padding-left:5px;padding-right:5px;padding-bottom:10px">Auctrack is hosted from a machine server. It can be easily transferred to any other machine or service! Auctrack also can easily switch from one database to a testing and production database to help protect the data being stored!</p>
+</div>
+<br />
+<div class="info">
+    <h2 class="text">Auctrack's Security:</h2>
+    <p style="padding-left:5px;padding-right:5px;padding-bottom:10px">For user accounts, there is only one user group, and that user group is for the students and volunteers that are going to be running the auction. All different possibilities of editing, creating, and deleting data have been found and patched up with authentication checks! We double down on authentication checks by hiding HTML (what the user can see) and also protecting the db.save functions that post to the database!</p>
+</div>
+<br />
+<div class="info">
+    <h2 class="text">Auctrack's Creators:</h2>
+    <p style="padding-left:5px;padding-right:5px;padding-bottom:10px">Auctrack was coded by David R. (8th Grade, East Middle School) and given design tips by Megan S. (8th Grade, East Middle School). The structure for this website was provided by Microsoft's default ASP.NET project template.</p>
+</div>
+<br />
+<div class="info">
+    <h2 class="text">(IMPORTANT) Auctrack's Accounts:</h2>
+    <p style="padding-left:5px;padding-right:5px;padding-bottom:10px">For this demo, user accounts, bidders, and items have been created to simulate an auction. All of the data can be found at <a href="https://docs.google.com/spreadsheets/d/1wAeUhTcXoO6CKQqhJzhWEt39Pn33yPr5CRzrY_dRX0Y/edit?usp=sharing">this link</a>.</p>
+</div>
+<br />

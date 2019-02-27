@@ -38,16 +38,22 @@
     </div>
 </div>
 <p>
-    @if (Request.IsAuthenticated) {
-    <div>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ItemID }) |
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-     }
-     @if (!Request.IsAuthenticated)
-     {
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-     }
+    @if (Request.IsAuthenticated)
+    {
+        <br />
+        <div style="text-align:center">
+            <a href="@Url.Action("Edit", "Item", new { id = Model.ItemID })" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="Edit" /></a>
+            <a href="@Url.Action("Index", "Item")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="Back to List" /></a>
+
+        </div>
+    }
+    @if (!Request.IsAuthenticated)
+    {
+        <br />
+        <div style="text-align:center">
+            <a href="@Url.Action("Connect", "Home")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="Bid Now!" /></a>
+            <a href="@Url.Action("Index", "Item")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="Back to List" /></a>
+
+        </div>
+    }
 </p>

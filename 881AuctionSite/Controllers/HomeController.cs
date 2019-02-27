@@ -24,7 +24,7 @@ namespace DemoAuctrack.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Demoinfo()
         {
             ViewBag.Message = "Your contact page.";
 

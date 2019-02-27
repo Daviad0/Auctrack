@@ -137,16 +137,12 @@
         </tr>
 
     </table>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>
+    <div style="text-align:center">
+        <a href="@Url.Action("Index", "Item")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="Cancel" /></a>
+        <input type="submit" value="Save" class="button button2" style="margin-left:2px;display:inline-block;color:white;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px" />
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -3,9 +3,10 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
-
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+<h1 style="font-size:60px;text-align:center;padding-bottom:5px">Register</h1>
+<h4 style="text-align:center">WSDP Account Required to register a new account!</h4>
+@if (Request.IsAuthenticated) { 
+using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <h4>Create a new account.</h4>
@@ -34,6 +35,7 @@
             <input type="submit" class="btn btn-default" value="Register" />
         </div>
     </div>
+}
 }
 
 @section Scripts {

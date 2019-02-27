@@ -92,8 +92,8 @@
 {
     <h3 style="text-align:center">WSDP Staff Options</h3>
     <div style="text-align:center">
-        <button class="button button2" style="margin-left:2px;display:inline-block;color:black;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px">@Html.ActionLink("Create New", "Create", new { controller = "Item" }, new { @style = "color:#ffffff" })</button>
-        <button class="button button2" style="margin-left:2px;display:inline-block;color:black;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px">@Html.ActionLink("View Bidders", "Index", new { controller = "Bidder" }, new { @style = "color:#ffffff" })</button>
+        <a href="@Url.Action("Create", "Item")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="Create Item" /></a>
+        <a href="@Url.Action("Index", "Bidder")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="View Bidders" /></a>
 
     </div>
     <br />
@@ -104,7 +104,7 @@
         <div style="text-align:center">
             <p style="color:black;display:inline-block;padding-right:5px;font-size:16px">Find by Item Name:</p> <p style="color:#4f0f87;display:inline-block;padding-right:5px">@Html.Editor("SearchString", ViewBag.CurrentFilter as string)</p>
             <button class="button button2" style="color:white;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px">Search</button>
-            <button class="button button2" style="margin-left:2px;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px">@Html.ActionLink("Clear", "Index", new { controller = "Item" }, new { @style = "color:#ffffff" })</button>
+            <a href="@Url.Action("Index", "Item")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="Clear" /></a>
         </div>
         <br />
     }

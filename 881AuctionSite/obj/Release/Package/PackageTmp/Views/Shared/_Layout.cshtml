@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - AUCTRACK</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,6 +25,9 @@
         .button2:hover {
             box-shadow: 0 12px 16px 0 rgba(118,40,186,0.24),0 17px 50px 0 rgba(118,40,186,0.19);
         }
+        .buttondanger:hover {
+            box-shadow: 0 12px 16px 0 rgba(255,104,104,0.24),0 17px 50px 0 rgba(255,104,104,0.19);
+        }
     </style>
 </head>
 
@@ -45,7 +48,10 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Connect", "Connect", "Home")</li>
                     <li>@Html.ActionLink("Item", "Index", "Item")</li>
+                    @if (Request.IsAuthenticated)
+                    {
                     <li>@Html.ActionLink("Bidder", "Index", "Bidder")</li>
+                    }
                     <li><a href="http://www.881thepark.com/music/listen-live-now/">Listen Live Now!</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -57,6 +63,7 @@
         <hr />
         <footer>
             <p>This is a DEMO for the 88.1 The Park Auction Website</p>
+            <button class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:1vw;border-radius:12px;display:inline-block">@Html.ActionLink("About Auctrack", "About", new { controller = "Home" }, new { @style = "color:#ffffff" })</button>
         </footer>
     </div>
 

@@ -70,6 +70,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.ItemID)
     <table class="table table-condensed">
         <tr>
             <th>
@@ -179,17 +180,14 @@
         </tr>
 
     </table>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
-        </div>
-    </div>
 
+    <div style="text-align:center">
+        <input type="submit" value="Save" class="button button2" style="margin-left:2px;display:inline-block;color:white;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px" />
+        <a href="@Url.Action("Index", "Item")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="Back to List" /></a>
+
+    </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

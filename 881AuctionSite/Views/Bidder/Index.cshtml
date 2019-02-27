@@ -99,8 +99,8 @@
 {
     <h3 style="text-align:center">WSDP Staff Options</h3>
     <div style="text-align:center">
-        <button class="button button2" style="margin-left:2px;display:inline-block;color:black;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px">@Html.ActionLink("Create New", "Create", new { controller = "Bidder" }, new { @style = "color:#ffffff" })</button>
-        <button class="button button2" style="margin-left:2px;display:inline-block;color:black;display:inline-block;background-color:#4f0f87;font-size:20px;border-radius:12px">@Html.ActionLink("View Items", "Index", new { controller = "Item" }, new { @style = "color:#ffffff" })</button>
+        <a href="@Url.Action("Create", "Bidder")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="Create Bidder" /></a>
+        <a href="@Url.Action("Index", "Item")" style="display:inline"><input type="button" class="button button2" style="margin-left:2px;background-color:#4f0f87;font-size:20px;border-radius:12px;display:inline" value="View Items" /></a>
 
     </div>
     <br />
